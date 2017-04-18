@@ -35,14 +35,16 @@ var serial = {};
       });
     };
 
-    return this.device_.open()
-        .then(() => {
+    return this.device_.open().
+    .then(() => device.selectConfiguration(1))
+    .then(() => device.claimInterface(device.configuration.interfaces[0].interfaceNumber));
+        /*.then(() => {
           if (this.device_.configuration === null) {
             return this.device_.selectConfiguration(1);
           }
         })
         .then(() => this.device_.claimInterface(2));
-        /*.then(() => this.device_.controlTransferOut({
+        .then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
             'request': [0x08,0xFF],
