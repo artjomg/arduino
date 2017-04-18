@@ -35,7 +35,7 @@ var serial = {};
       });
     };
 
-    return this.device_.open().
+    return this.device_.open()
     .then(() => device.selectConfiguration(1))
     .then(() => device.claimInterface(device.configuration.interfaces[0].interfaceNumber));
         /*.then(() => {
