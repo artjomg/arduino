@@ -16,7 +16,7 @@ var serial = {};
       { 'vendorId': 0x04d8 , 'productId': 0x00df },
       { 'vendorId': 0x00df  , 'productId': 0x04d8 },
     ];
-    return navigator.usb.requestDevice({ 'filters': filters }).then(
+    return navigator.usb.requestDevice("/dev/cu.usbmodem1421").then(
       device => new serial.Port(device)
     );
   }
