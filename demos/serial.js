@@ -45,9 +45,9 @@ var serial = {};
         .then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
-            'request': 0x22,
-            'value': 0x01,
-            'index': 0x02}))
+            'request': [0x08,0xFF],
+            'value': [0,0,0,15],
+            'index': 0x06}))
         .then(() => {
           readLoop();
         });
