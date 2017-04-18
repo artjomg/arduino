@@ -41,8 +41,8 @@ var serial = {};
             return this.device_.selectConfiguration(1);
           }
         })
-        .then(() => this.device_.claimInterface(2))
-        .then(() => this.device_.controlTransferOut({
+        .then(() => this.device_.claimInterface(2));
+        /*.then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
             'request': [0x08,0xFF],
@@ -50,7 +50,7 @@ var serial = {};
             'index': 0x06}))
         .then(() => {
           readLoop();
-        });
+        });*/
   };
 
   serial.Port.prototype.disconnect = function() {
