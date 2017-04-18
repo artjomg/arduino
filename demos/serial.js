@@ -36,8 +36,8 @@ var serial = {};
     };
 
     return this.device_.open()
-    .then(() => device.selectConfiguration(0))
-    .then(() => device.claimInterface(device.configuration.interfaces[0].interfaceNumber));
+    .then(() => device.selectConfiguration(1))
+    .then(() => device.claimInterface(2));
         /*.then(() => {
           if (this.device_.configuration === null) {
             return this.device_.selectConfiguration(1);
